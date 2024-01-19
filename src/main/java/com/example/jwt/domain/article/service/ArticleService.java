@@ -7,6 +7,9 @@ import com.example.jwt.global.RsData.RsData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class ArticleService {
@@ -27,5 +30,13 @@ public class ArticleService {
                 article
         );
 
+    }
+
+    public List<Article> findAll() {
+        return articleRepository.findAll();
+    }
+
+    public Optional<Article> findById(Long id) {
+        return articleRepository.findById(id);
     }
 }
